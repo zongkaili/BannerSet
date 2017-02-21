@@ -22,8 +22,8 @@ public class VpBanner1Activity extends AppCompatActivity {
         this.activitymain = (RelativeLayout) findViewById(R.id.activity_main);
         this.gallery = (ViewPagerGallery) findViewById(R.id.gallery);
         List<Integer> list = new ArrayList<>();
-        for (int i = 1; i < 9; i++){
-            int id = getResources().getIdentifier("img" + i, "mipmap", getPackageName());
+        for (int i = 0; i < 8; i++){
+            int id = getResources().getIdentifier("timg" + i, "mipmap", getPackageName());
             list.add(id);
         }
         gallery.setImgResources(list);
