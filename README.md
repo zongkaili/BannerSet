@@ -9,5 +9,6 @@
 <!--![screen](https://github.com/zongkaili/RecyclerviewBanner-master/blob/master/screenshots/device-2016-12-06-223604.png)-->
 <!--![screen](https://github.com/zongkaili/RecyclerviewBanner-master/blob/master/screenshots/device-2016-12-06-223630.png)-->
 
-##
+##參考
+https://github.com/FlyRecker/FlyBanner
 
