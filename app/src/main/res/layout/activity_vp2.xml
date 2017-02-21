@@ -16,7 +16,8 @@
     <com.recker.flybanner.FlyBanner
         android:id="@+id/banner_1"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="200dp"
+        android:background="@drawable/img_default"/>
 
     <Button
         android:layout_width="match_parent"
@@ -28,6 +29,7 @@
     <com.recker.flybanner.FlyBanner
         android:id="@+id/banner_2"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="200dp"
+        android:background="@drawable/img_default"/>
 
 </LinearLayout>
