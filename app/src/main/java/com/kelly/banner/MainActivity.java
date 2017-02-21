@@ -13,7 +13,7 @@ import com.kelly.banner.vpbanner2.VpBanner2Activity;
 public class MainActivity extends Activity {
 
 
-    private Button cityBtn, mainBtn, wangyiBtn, swipeBtn;
+    private Button cityBtn, mainBtn, wangyiBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
