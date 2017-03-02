@@ -8,6 +8,10 @@
 <!--![screen](https://github.com/zongkaili/RecyclerviewBanner-master/blob/master/screenshots/device-2016-12-06-223440.png,width=300)-->
 <!--![screen](https://github.com/zongkaili/RecyclerviewBanner-master/blob/master/screenshots/device-2016-12-06-223604.png)-->
 <!--![screen](https://github.com/zongkaili/RecyclerviewBanner-master/blob/master/screenshots/device-2016-12-06-223630.png)-->
+![pic](https://github.com/zongkaili/RecyclerviewBanner-master/blob/master/screenshots/bannerset_gif.gif)
+
+##加载图片
+Glide和Picasso
 
 ##參考
 https://github.com/FlyRecker/FlyBanner
