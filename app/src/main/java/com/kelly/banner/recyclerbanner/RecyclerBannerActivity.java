@@ -25,6 +25,12 @@ public class RecyclerBannerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
         pager = (RecyclerBanner) findViewById(R.id.r);
+        /*((RecyclerAdapter)pager.recyclerView.getAdapter()).setOnPagerClickListener(new RecyclerAdapter.OnPagerClickListener() {
+            @Override
+            public void onClick(RecyclerAdapter.BannerEntity entity) {
+                Toast.makeText(RecyclerBannerActivity.this, entity.getUrl(), Toast.LENGTH_SHORT).show();
+            }
+        });*/
         pager.setOnPagerClickListener(new RecyclerBanner.OnPagerClickListener() {
             @Override
             public void onClick(RecyclerBanner.BannerEntity entity) {

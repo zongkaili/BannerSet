@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.eicky.ViewPagerGallery;
 import com.kelly.banner.R;
 import com.recker.flybanner.FlyBanner;
 
@@ -15,6 +16,8 @@ public class VpBanner2Activity extends AppCompatActivity {
     private FlyBanner mBannerLocal;//加载本地图片
 
     private FlyBanner mBannerNet;//加载网络图片
+
+    private FlyBanner mGallery;
 
     private String[] mImagesUrl = {
             "https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1487670814&di=68a37f51a0233a0ca396f8d661120e37&src=http://i.shangc.net/2017/0130/20170130053110183.jpg",
@@ -34,7 +37,10 @@ public class VpBanner2Activity extends AppCompatActivity {
 
 
         initLocalBanner();
+
         initNetBanner();
+
+        initGalleryBanner();
     }
 
     /**
@@ -71,9 +77,26 @@ public class VpBanner2Activity extends AppCompatActivity {
         for (int i = 0; i < mImagesUrl.length; i++) {
             imgesUrl.add(mImagesUrl[i]);
         }
-        mBannerNet.setImagesUrl(imgesUrl);
+        mBannerNet.setImagesUrl(imgesUrl,false);
 
         mBannerNet.setOnItemClickListener(new FlyBanner.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                toast("点击了第" + position + "张图片");
+            }
+        });
+    }
+
+    private void initGalleryBanner(){
+        mGallery = (FlyBanner) findViewById(R.id.banner_3);
+
+        List<String> imgesUrl = new ArrayList<>();
+        for (int i = 0; i < mImagesUrl.length; i++) {
+            imgesUrl.add(mImagesUrl[i]);
+        }
+        mGallery.setImagesUrl(imgesUrl,true);
+
+        mGallery.setOnItemClickListener(new FlyBanner.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 toast("点击了第" + position + "张图片");

@@ -72,6 +72,8 @@ public class FlyBanner extends RelativeLayout {
     //指示点是否可见
     private boolean mPointsIsVisible = true;
 
+    private ViewGroup.LayoutParams mLayoutParams;
+
 
     private Handler mAutoPlayHandler = new Handler() {
         @Override
@@ -119,7 +121,9 @@ public class FlyBanner extends RelativeLayout {
         }
         //添加ViewPager
         mViewPager = new ViewPager(context);
-        addView(mViewPager, new LayoutParams(RMP, RMP));
+        LayoutParams viewpagerLp = new LayoutParams(RMP, RWP);
+        viewpagerLp.addRule(RelativeLayout.CENTER_IN_PARENT);
+        addView(mViewPager, viewpagerLp);
         //设置指示器背景容器
         RelativeLayout pointContainerRl = new RelativeLayout(context);
         if (Build.VERSION.SDK_INT >= 16) {
@@ -167,21 +171,21 @@ public class FlyBanner extends RelativeLayout {
         if (images.size() <= 1)
             mIsOneImg = true;
         //初始化ViewPager
-        initViewPager();
+        initViewPager(false);
     }
 
     /**
      * 设置网络图片
      * @param urls
      */
-    public void setImagesUrl(List<String> urls) {
+    public void setImagesUrl(List<String> urls,boolean isGallery) {
         //加载网络图片
         mIsImageUrl = true;
         this.mImageUrls = urls;
         if (urls.size() <= 1)
             mIsOneImg = true;
         //初始化ViewPager
-        initViewPager();
+        initViewPager(isGallery);
     }
 
     /**
@@ -213,7 +217,7 @@ public class FlyBanner extends RelativeLayout {
         }
     }
 
-    private void initViewPager() {
+    private void initViewPager(boolean isGallery) {
         //当图片多于1张时添加指示点
         if(!mIsOneImg) {
             addPoints();
@@ -221,6 +225,11 @@ public class FlyBanner extends RelativeLayout {
         //设置ViewPager
         FlyPageAdapter adapter = new FlyPageAdapter();
         mViewPager.setAdapter(adapter);
+
+        if(isGallery){
+            init();
+        }
+
         mViewPager.addOnPageChangeListener(mOnPageChangeListener);
         //跳转到首页
         mViewPager.setCurrentItem(1, false);
@@ -230,6 +239,32 @@ public class FlyBanner extends RelativeLayout {
         }
     }
 
+    private void init() {
+        int pagerWidth = (int) (getContext().getResources().getDisplayMetrics().widthPixels * 3.0f / 5.0f);
+        mLayoutParams = mViewPager.getLayoutParams();
+        if (mLayoutParams == null) {
+            mLayoutParams = new ViewGroup.LayoutParams(pagerWidth, ViewGroup.LayoutParams.MATCH_PARENT);
+        } else {
+            mLayoutParams.width = pagerWidth;
+        }
+        mViewPager.setLayoutParams(mLayoutParams);
+        mViewPager.setPageMargin(-50);
+        mViewPager.setPageTransformer(true, new GalleryTransformer());
+        mViewPager.setClipChildren(false);
+        ViewGroup view = (ViewGroup) mViewPager.getParent();
+        if (view != null) {
+            view.setClipChildren(false);
+            view.setOnTouchListener(new OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    return dispatchTouchEvent(event);
+                }
+            });
+        }
+        if(mImageUrls != null){
+            mViewPager.setOffscreenPageLimit(mImageUrls.size());
+        }
+    }
 
     /**
      * 返回真实的位置
@@ -255,6 +290,7 @@ public class FlyBanner extends RelativeLayout {
         @Override
         public void onPageScrolled(int position, float positionOffset,
                                    int positionOffsetPixels) {
+
         }
 
         @Override
