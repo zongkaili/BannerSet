@@ -9,11 +9,11 @@ import android.widget.Button;
 import com.kelly.banner.recyclerbanner.RecyclerBannerActivity;
 import com.kelly.banner.vpbanner1.VpBanner1Activity;
 import com.kelly.banner.vpbanner2.VpBanner2Activity;
+import com.kelly.banner.vpbanner3.VpBanner3Activity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
-
-    private Button cityBtn, mainBtn, wangyiBtn;
+    private Button mBtn1, mBtn2, mBtn3, mBtn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,29 +23,32 @@ public class MainActivity extends Activity {
     }
 
     private void init() {
+        mBtn1 = (Button) findViewById(R.id.btn1);
+        mBtn1.setOnClickListener(this);
+        mBtn2 = (Button) findViewById(R.id.btn2);
+        mBtn2.setOnClickListener(this);
+        mBtn3 = (Button) findViewById(R.id.btn3);
+        mBtn3.setOnClickListener(this);
+        mBtn4 = (Button) findViewById(R.id.btn4);
+        mBtn4.setOnClickListener(this);
 
+    }
 
-        cityBtn = (Button) findViewById(R.id.btn1);
-        cityBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn1:
                 startActivity(new Intent(MainActivity.this, RecyclerBannerActivity.class));
-            }
-        });
-        mainBtn = (Button) findViewById(R.id.btn2);
-        mainBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.btn2:
                 startActivity(new Intent(MainActivity.this, VpBanner1Activity.class));
-            }
-        });
-        wangyiBtn = (Button) findViewById(R.id.btn3);
-        wangyiBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.btn3:
                 startActivity(new Intent(MainActivity.this, VpBanner2Activity.class));
-            }
-        });
-
+                break;
+            case R.id.btn4:
+                startActivity(new Intent(MainActivity.this, VpBanner3Activity.class));
+                break;
+        }
     }
 }

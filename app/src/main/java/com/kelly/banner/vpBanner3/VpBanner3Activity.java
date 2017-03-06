@@ -1,17 +1,16 @@
-package com.kelly.banner.vpbanner2;
+package com.kelly.banner.vpbanner3;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.eicky.ViewPagerGallery;
 import com.kelly.banner.R;
 import com.recker.flybanner.FlyBanner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VpBanner2Activity extends AppCompatActivity {
+public class VpBanner3Activity extends AppCompatActivity {
 
     private FlyBanner mBannerLocal;//加载本地图片
 
@@ -33,51 +32,21 @@ public class VpBanner2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vp2);
+        setContentView(R.layout.activity_vp3);
 
-
-        initLocalBanner();
-
-        initNetBanner();
+        initGalleryBanner();
     }
 
-    /**
-     * 加载本地图片
-     */
-    private void initLocalBanner() {
-        mBannerLocal = (FlyBanner) findViewById(R.id.banner_1);
-
-        List<Integer> images = new ArrayList<>();
-        images.add(R.mipmap.timg0);
-        images.add(R.mipmap.timg1);
-        images.add(R.mipmap.timg2);
-        images.add(R.mipmap.timg3);
-        images.add(R.mipmap.timg4);
-        images.add(R.mipmap.timg6);
-        mBannerLocal.setImages(images);
-//        mBannerLocal.setPoinstPosition(FlyBanner.RIGHT);
-
-        mBannerLocal.setOnItemClickListener(new FlyBanner.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                toast("点击了第"+position+"张图片");
-            }
-        });
-    }
-
-    /**
-     * 加载网页图片
-     */
-    private void initNetBanner() {
-        mBannerNet = (FlyBanner) findViewById(R.id.banner_2);
+    private void initGalleryBanner(){
+        mGallery = (FlyBanner) findViewById(R.id.banner_3);
 
         List<String> imgesUrl = new ArrayList<>();
         for (int i = 0; i < mImagesUrl.length; i++) {
             imgesUrl.add(mImagesUrl[i]);
         }
-        mBannerNet.setImagesUrl(imgesUrl,false);
+        mGallery.setImagesUrl(imgesUrl,true);
 
-        mBannerNet.setOnItemClickListener(new FlyBanner.OnItemClickListener() {
+        mGallery.setOnItemClickListener(new FlyBanner.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 toast("点击了第" + position + "张图片");
