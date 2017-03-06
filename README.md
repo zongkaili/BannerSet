@@ -41,7 +41,7 @@
         }
     }
 ```
-其中  mViewPager.setPageTransformer(true, new GalleryTransformer());是设置viewPager切换时的动画效果
+其中  mViewPager.setPageTransformer(true, new GalleryTransformer());是设置viewPager切换时的动画效果。
 GalleryTransformer类实现了ViewPager.PageTransformer接口，并重写transformPage()方法,具体实现如下：]
 
 ```java
