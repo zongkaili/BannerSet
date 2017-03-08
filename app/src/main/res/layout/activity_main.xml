@@ -15,25 +15,29 @@
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="recyclerView-banner" />
+        android:text="recyclerView-banner"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="viewpager1-banner" />
+        android:text="viewpager1-banner"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="viewpager2-banner" />
+        android:text="viewpager2-banner"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="viewpager3-banner" />
+        android:text="viewpager3-banner"
+        android:textAllCaps="false"/>
 
 
 </LinearLayout>
