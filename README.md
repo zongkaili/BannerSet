@@ -10,7 +10,11 @@
 <!--![screen](https://github.com/zongkaili/RecyclerviewBanner-master/blob/master/screenshots/device-2016-12-06-223630.png)-->
 ![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/bannerset_gif.gif)
 ![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/bannerset_gallery.gif)
-![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/device-2017-03-08-100349.jpg)
+![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/main.jpg)
+![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/recycler_banner.jpg)
+![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/viewpager_banner.jpg)
+![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/viewpager_gallery.jpg)
+![image](https://github.com/zongkaili/BannerSet/blob/master/screenshots/viewpager_gallery_banner.jpg)
 
 ##关键代码
  - gallery效果
