@@ -50,7 +50,7 @@ public class ViewPagerGallery extends ViewPager {
             mLayoutParams.width = pagerWidth;
         }
         this.setLayoutParams(mLayoutParams);
-        this.setPageMargin(-50);
+        this.setPageMargin(50);
         this.setPageTransformer(true, new GalleryTransformer());
         this.setClipChildren(false);
         ViewGroup view = (ViewGroup) this.getParent();

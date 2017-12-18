@@ -1,5 +1,6 @@
 package com.recker.flybanner;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -11,6 +12,7 @@ import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,6 +77,7 @@ public class FlyBanner extends RelativeLayout {
     private ViewGroup.LayoutParams mLayoutParams;
 
 
+    @SuppressLint("HandlerLeak")
     private Handler mAutoPlayHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -206,7 +209,7 @@ public class FlyBanner extends RelativeLayout {
      * 对应三个位置 CENTER,RIGHT,LEFT
      * @param position
      */
-    public void setPoinstPosition(int position) {
+    public void setPointsPosition(int position) {
         //设置指示器布局位置
         if (position == CENTER) {
             mPointRealContainerLp.addRule(RelativeLayout.CENTER_HORIZONTAL);
@@ -325,11 +328,8 @@ public class FlyBanner extends RelativeLayout {
             if (mIsOneImg) {
                 return 1;
             }
-            //当为网络图片，返回网页图片长度
-            if (mIsImageUrl)
-                return mImageUrls.size() + 2;
-            //当为本地图片，返回本地图片长度
-            return mImages.size()+2;
+            //当为网络图片，返回网页图片长度,当为本地图片，返回本地图片长度
+            return mIsImageUrl ? mImageUrls.size() + 2 : mImages.size() + 2;
         }
 
         @Override

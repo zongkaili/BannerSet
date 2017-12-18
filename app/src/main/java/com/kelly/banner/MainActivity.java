@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.kelly.banner.recyclerbanner.RecyclerBannerActivity;
+import com.kelly.banner.recyclerbanner1.Recycler1BannerActivity;
 import com.kelly.banner.vpbanner1.VpBanner1Activity;
 import com.kelly.banner.vpbanner2.VpBanner2Activity;
 import com.kelly.banner.vpbanner3.VpBanner3Activity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private Button mBtn1, mBtn2, mBtn3, mBtn4;
+    private Button mBtn0, mBtn1, mBtn2, mBtn3, mBtn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void init() {
+        mBtn0 = (Button) findViewById(R.id.btn0);
+        mBtn0.setOnClickListener(this);
         mBtn1 = (Button) findViewById(R.id.btn1);
         mBtn1.setOnClickListener(this);
         mBtn2 = (Button) findViewById(R.id.btn2);
@@ -37,8 +40,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn1:
+            case R.id.btn0:
                 startActivity(new Intent(MainActivity.this, RecyclerBannerActivity.class));
+                break;
+            case R.id.btn1:
+                startActivity(new Intent(MainActivity.this, Recycler1BannerActivity.class));
                 break;
             case R.id.btn2:
                 startActivity(new Intent(MainActivity.this, VpBanner1Activity.class));
@@ -48,6 +54,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn4:
                 startActivity(new Intent(MainActivity.this, VpBanner3Activity.class));
+                break;
+            default:
                 break;
         }
     }

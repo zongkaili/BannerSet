@@ -17,21 +17,15 @@ import java.util.List;
  */
 public class RecyclerBannerActivity extends AppCompatActivity {
 
-    RecyclerBanner pager;
+    RecyclerBanner banner;
     private List<RecyclerBanner.BannerEntity> urls = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
-        pager = (RecyclerBanner) findViewById(R.id.r);
-        /*((RecyclerAdapter)pager.recyclerView.getAdapter()).setOnPagerClickListener(new RecyclerAdapter.OnPagerClickListener() {
-            @Override
-            public void onClick(RecyclerAdapter.BannerEntity entity) {
-                Toast.makeText(RecyclerBannerActivity.this, entity.getUrl(), Toast.LENGTH_SHORT).show();
-            }
-        });*/
-        pager.setOnPagerClickListener(new RecyclerBanner.OnPagerClickListener() {
+        banner = (RecyclerBanner) findViewById(R.id.r);
+        banner.setOnPagerClickListener(new RecyclerBanner.OnPagerClickListener() {
             @Override
             public void onClick(RecyclerBanner.BannerEntity entity) {
                 Toast.makeText(RecyclerBannerActivity.this, entity.getUrl(), Toast.LENGTH_SHORT).show();
@@ -65,7 +59,7 @@ public class RecyclerBannerActivity extends AppCompatActivity {
         }
         long t = System.currentTimeMillis();
 
-        pager.setDatas(urls);
+        banner.setDatas(urls);
         Log.w("---", System.currentTimeMillis() - t + "");
     }
 

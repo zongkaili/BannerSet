@@ -12,10 +12,17 @@
 
 
     <Button
+        android:id="@+id/btn0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="recyclerView0-banner"
+        android:textAllCaps="false"/>
+
+    <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="recyclerView-banner"
+        android:text="recyclerView1-banner"
         android:textAllCaps="false"/>
 
     <Button

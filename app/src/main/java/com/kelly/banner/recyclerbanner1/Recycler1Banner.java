@@ -1,4 +1,4 @@
-package com.kelly.banner.recyclerbanner;
+package com.kelly.banner.recyclerbanner1;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
@@ -28,7 +28,7 @@ import java.util.List;
  * @date 2016/10/28
  * @description Describe the place where the class needs to pay attention.
  */
-public class RecyclerBanner extends FrameLayout {
+public class Recycler1Banner extends FrameLayout {
 
     RecyclerView recyclerView;
     LinearLayout linearLayout;
@@ -62,15 +62,15 @@ public class RecyclerBanner extends FrameLayout {
         }
     };
 
-    public RecyclerBanner(Context context) {
+    public Recycler1Banner(Context context) {
         this(context, null);
     }
 
-    public RecyclerBanner(Context context, AttributeSet attrs) {
+    public Recycler1Banner(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public RecyclerBanner(Context context, AttributeSet attrs, int defStyleAttr) {
+    public Recycler1Banner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         size = (int) (6 * context.getResources().getDisplayMetrics().density + 0.5f);
         defaultDrawable = new GradientDrawable();

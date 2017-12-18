@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.eicky.ViewPagerGallery;
 import com.kelly.banner.R;
 import com.recker.flybanner.FlyBanner;
 
@@ -55,7 +54,7 @@ public class VpBanner2Activity extends AppCompatActivity {
         images.add(R.mipmap.timg4);
         images.add(R.mipmap.timg6);
         mBannerLocal.setImages(images);
-//        mBannerLocal.setPoinstPosition(FlyBanner.RIGHT);
+//        mBannerLocal.setPointsPosition(FlyBanner.RIGHT);
 
         mBannerLocal.setOnItemClickListener(new FlyBanner.OnItemClickListener() {
             @Override

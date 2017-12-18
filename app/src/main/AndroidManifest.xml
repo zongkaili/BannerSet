@@ -19,6 +19,7 @@
         </activity>
 
         <activity android:name=".recyclerbanner.RecyclerBannerActivity"></activity>
+        <activity android:name=".recyclerbanner1.Recycler1BannerActivity"></activity>
         <activity android:name=".vpbanner1.VpBanner1Activity"></activity>
         <activity android:name=".vpbanner2.VpBanner2Activity"></activity>
         <activity android:name=".vpbanner3.VpBanner3Activity"></activity>
